@@ -1,14 +1,6 @@
 { config, lib, pkgs, ... }:
 {
   wsl.enable = true;
-  wsl.defaultUser = "crdy";
-
-  networking.hostName = "crdy";
-
-  users.users.crdy = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

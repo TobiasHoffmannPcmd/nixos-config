@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, user, ... }:
 
 {
-  home.username = "crdy";
-  home.homeDirectory = "/home/crdy";
+  home.username = user.username;
+  home.homeDirectory = "/home/${user.username}";
   home.packages = with pkgs; [
     # system-wide installed
     fastfetch
@@ -25,8 +24,8 @@
 
   programs.git = {
     enable = true;
-    settings.user.name = "TobiasHoffmannPcmd";
-    settings.user.email = "tp@globalwindsafety.org";
+    settings.user.name = user.gitName;
+    settings.user.email = user.gitEmail;
   };
 
   programs.neovim = {
