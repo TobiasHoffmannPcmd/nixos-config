@@ -9,7 +9,8 @@ Shared NixOS + home-manager setup for WSL.
    ```
    git clone git@github.com:TobiasHoffmannPcmd/nixos-config.git /etc/nixos
    ```
-3. In `flake.nix`, add yourself to the `hosts` list (copy the `newUser-pc` entry and edit it):
+3. Remove old `configuration.nix`.
+4. In `flake.nix`, add yourself to the `hosts` list (copy the `newUser-pc` entry and edit it):
    ```nix
    your-pc = {
      username = "yourname";
@@ -17,11 +18,11 @@ Shared NixOS + home-manager setup for WSL.
      gitEmail = "you@globalwindsafety.org";
    };
    ```
-4. Build and switch, using the host name you picked:
+5. Build and switch, using the host name you picked:
    ```
    sudo nixos-rebuild switch --flake /etc/nixos#your-pc
    ```
-5. Commit and push your new `hosts` entry so your config is backed up.
+6. Commit and push your new `hosts` entry so your config is backed up.
 
 ## Updating
 
